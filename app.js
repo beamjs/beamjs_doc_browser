@@ -75,7 +75,7 @@ var handler = function(request, response) {
 		}
 	}
 	
-	response.write("<hr><em>Beam.js " + global.sys.beamjs.version + "</em>");
+	response.write('<hr>Powered by <a href="https://github.com/beamjs/beams_doc_browser">Beam.js Documentation Browser</a> (<em>Beam.js '+ global.sys.beamjs.version + "</em>)");
 	
 	response.end("</body></html>");
 	
