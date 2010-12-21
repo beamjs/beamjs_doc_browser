@@ -1,0 +1,7 @@
+How to start:
+
+$ make deps && make
+$ cd ../beamjs
+$ ./beamjs -sname beam -pa ../beamjs_misultin/ebin -pa ../beamjs_misultin/deps/misultin/ebin/   -mod http beamjs_misultin -jseval "listenPort=8080" -load ../beamjs_doc_browser/app.js
+
+
