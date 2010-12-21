@@ -46,7 +46,7 @@ var handler = function(request, response) {
     }
 
 	response.writeHead(200, {"Content-Type": "text/html"});
-	response.write("<html><head><title>Beam.js Doc Browser</title></head><body>");
+	response.write("<html><head><title>Beam.js Documentation Browser</title></head><body>");
 
 	var __doc__ = "";
 	
@@ -55,7 +55,9 @@ var handler = function(request, response) {
 	}
 
 	
-	response.write("<h1><em>" + typeof current + "</em> " + key + "</h1>");
+	if (key!="") {
+		response.write("<h1><em>" + typeof current + "</em> " + key + "</h1>");
+	}
 	
 	response.write(__doc__);
 	
@@ -72,10 +74,11 @@ var handler = function(request, response) {
 			   	__doc__ = _showdown.makeHtml(d);
 			}
 			response.write(__doc__);
+			response.write('<hr />');
 		}
 	}
 	
-	response.write('<hr>Powered by <a href="https://github.com/beamjs/beamjs_doc_browser">Beam.js Documentation Browser</a> (<em>Beam.js '+ global.sys.beamjs.version + "</em>)");
+	response.write('Powered by <a href="https://github.com/beamjs/beamjs_doc_browser">Beam.js Documentation Browser</a> (<em>Beam.js '+ global.sys.beamjs.version + "</em>)");
 	
 	response.end("</body></html>");
 	
