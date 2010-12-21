@@ -4,7 +4,8 @@ var global = { events: require('events'),
                console: console,
                sys: require('sys'),
                messaging: require('messaging'),
-               dist: require('dist')
+               dist: require('dist'),
+               fs: require('fs')
              };
 
 require.paths.unshift(__dirname);
@@ -72,8 +73,8 @@ var handler = function(request, response) {
 		}
 	}
 	
-	response.writeHead(200, {"Content-Type": "text/html"});
 	try {
+		response.writeHead(200, {"Content-Type": "text/html"});
 		response.end(Template(templateData));
 	} catch (e) {
 		console.log(e);
