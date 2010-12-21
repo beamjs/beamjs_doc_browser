@@ -1,0 +1,36 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 1.0
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* ie.css */
+body {text-align:center;}
+.beamjs-container {text-align:left;}
+* html .beamjs-column, * html .beamjs-span-1, * html .beamjs-span-2, * html .beamjs-span-3, * html .beamjs-span-4, * html .beamjs-span-5, * html .beamjs-span-6, * html .beamjs-span-7, * html .beamjs-span-8, * html .beamjs-span-9, * html .beamjs-span-10, * html .beamjs-span-11, * html .beamjs-span-12, * html .beamjs-span-13, * html .beamjs-span-14, * html .beamjs-span-15, * html .beamjs-span-16, * html .beamjs-span-17, * html .beamjs-span-18, * html .beamjs-span-19, * html .beamjs-span-20, * html .beamjs-span-21, * html .beamjs-span-22, * html .beamjs-span-23, * html .beamjs-span-24 {display:inline;overflow-x:hidden;}
+* html legend {margin:0px -8px 16px 0;padding:0;}
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+html>body p code {*white-space:normal;}
+hr {margin:-8px auto 11px;}
+img {-ms-interpolation-mode:bicubic;}
+.beamjs-clearfix, .beamjs-container {display:inline-block;}
+* html .beamjs-clearfix, * html .beamjs-container {height:1%;}
+fieldset {padding-top:0;}
+legend {margin-top:-0.2em;margin-bottom:1em;margin-left:-0.5em;}
+textarea {overflow:auto;}
+label {vertical-align:middle;position:relative;top:-0.25em;}
+input.beamjs-text, input.beamjs-title, textarea {background-color:#fff;border:1px solid #bbb;}
+input.beamjs-text:focus, input.beamjs-title:focus {border-color:#666;}
+input.beamjs-text, input.beamjs-title, textarea, select {margin:0.5em 0;}
+input.beamjs-checkbox, input.beamjs-radio {position:relative;top:.25em;}
+form.beamjs-inline div, form.beamjs-inline p {vertical-align:middle;}
+form.beamjs-inline input.beamjs-checkbox, form.beamjs-inline input.beamjs-radio, form.beamjs-inline input.beamjs-button, form.beamjs-inline button {margin:0.5em 0;}
+button, input.beamjs-button {position:relative;top:0.25em;}

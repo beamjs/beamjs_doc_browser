@@ -13,10 +13,21 @@ require('showdown');
 var YAJET = require('yajet');
 
 var Template = function (v) { return v};
+var STATIC = {
+	'/css/screen.css': undefined,
+	'/css/ie.css': undefined,
+	'/css/print.css': undefined
+};
 
 var handler = function(request, response) {	 
 	if (request.path == "/favicon.ico") {
 		response.writeHead(404,{});
+		return;
+	} 
+
+	if (STATIC[request.path] != undefined) {
+		response.writeHead(200,{"Content-Type": "text/css"});	
+		response.end(STATIC[request.path]);
 		return;
 	} 
 	
@@ -69,6 +80,11 @@ var handler = function(request, response) {
 	}
 };
 var showdown = new Showdown.converter();
+for (file in STATIC)
+require('fs').readFile(__dirname + file, function(err, data) {
+	STATIC[file] = data;
+});
+
 require('fs').readFile(__dirname + "/template.html", function(err, template) {
 	Template = new YAJET({reader_char: "$",	filters : {
         showdown: function(val) { return showdown.makeHtml(val) }
