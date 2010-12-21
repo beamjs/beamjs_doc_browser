@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Beam.js Documentation Browser</title>
+</head>
+<body>
+
+<h1><em>${ typeof this.topics }</em> ${ this.key }</h1>
+
+${ this.doc, showdown }
+
+<hr />
+
+$(MAPHASH (topic, obj => this.topics)
+	<h2><em>${ typeof obj }</em> <a href="${ this.path }${ topic }">${ topic }</a></h2>
+		$(IF (obj.__doc__ != undefined)
+			${ obj.__doc__, showdown }
+		$)
+	<hr />
+$)
+
+Powered by <a href="https://github.com/beamjs/beamjs_doc_browser">Beam.js Documentation Browser</a> <em>Beam.js ${ this.version } </em>
+</body>
+</html>
