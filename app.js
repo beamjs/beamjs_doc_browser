@@ -5,7 +5,8 @@ var global = { events: require('events'),
                sys: require('sys'),
                messaging: require('messaging'),
                dist: require('dist'),
-               fs: require('fs')
+               fs: require('fs'),
+               os: require('os')
              };
 
 require.paths.unshift(__dirname);
