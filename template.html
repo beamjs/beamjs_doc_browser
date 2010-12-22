@@ -18,14 +18,14 @@
         <div class="content-wrapper">
             <section class="content">
 
-                <h2><em>${ typeof this.topics }</em> ${ this.key }</h2>
+                <h2><em>${ this.topics, typeOf }</em> ${ this.key }</h2>
 
                 ${ this.doc, showdown }
 
                 <hr />
 
                 $(MAPHASH (topic, obj => this.topics)
-                <h3 id="${ topic }"><em>${ typeof obj }</em> <a href="${ this.path }${ topic }">${ topic }</a></h3>
+                <h3 id="${ topic }"><em>${ obj, typeOf }</em> <a href="${ this.path }${ topic }">${ topic }</a></h3>
                 $(IF (obj.__doc__ != undefined)
                 ${ obj.__doc__, showdown }
                 $(ELSE)

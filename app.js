@@ -88,7 +88,8 @@ require('fs').readFile(__dirname + file, function(err, data) {
 
 require('fs').readFile(__dirname + "/template.html", function(err, template) {
 	Template = new YAJET({reader_char: "$",	filters : {
-        showdown: function(val) { return showdown.makeHtml(val) }
+        showdown: function(val) { return showdown.makeHtml(val) },
+        typeOf: function(val) { if (typeof val == 'function') return 'function'; if (typeof val == 'object') return ''; }
     }}).compile(template);
  	http.createServer(handler).listen(listenPort);
 });
