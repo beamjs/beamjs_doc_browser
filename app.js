@@ -16,8 +16,8 @@ var YAJET = require('yajet');
 
 var Template = function (v) { return v};
 var STATIC = {
-	'/css/fonts.css': undefined,
-	'/css/main.css': undefined
+    '/css/fonts.css': undefined,
+    '/css/main.css': undefined
 };
 
 var handler = function(request, response) {	 
@@ -81,14 +81,17 @@ var handler = function(request, response) {
 };
 
 var showdown = new Showdown.converter();
-for (file in STATIC)
-require('fs').readFile(__dirname + file, function(err, data) {
-	STATIC[file] = data;
-});
+
+for (file in STATIC) {
+    require('fs').readFile(__dirname + file, function(err, data) {
+            STATIC[file] = data;
+    });
+}
 
 require('fs').readFile(__dirname + "/template.html", function(err, template) {
-	Template = new YAJET({reader_char: "$",	filters : {
+    Template = new YAJET({reader_char: "$", filters: {
         showdown: function(val) { return showdown.makeHtml(val) }
     }}).compile(template);
- 	http.createServer(handler).listen(listenPort);
+    global.server = http.createServer(handler)
+    global.server.listen(listenPort || "8080");
 });
