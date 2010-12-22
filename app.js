@@ -67,7 +67,9 @@ var handler = function(request, response) {
     }
 
     for (_export in current) {
-        if ((_export != "__doc__") && ((typeof current == 'function')  && (_export != "isNative")) && ((typeof current[_export] == 'object') || (typeof current[_export] == 'function'))) {
+        if ((_export != "__doc__") && ((typeof current[_export] == 'object') || (typeof current[_export] == 'function'))) {
+	        if ((typeof current == 'function') && (_export == "isNative"))
+	           continue;
             templateData.topics[_export] = current[_export];
         }
     }
