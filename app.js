@@ -62,7 +62,7 @@ var handler = function(request, response) {
         topics: {},
         obj: current,
         path: path,
-        version: global.sys.beamjs.version
+        version: beamjs.version
     };
 
     if ((d = current['__doc__']) != undefined) {
