@@ -6,14 +6,8 @@ beamjs.bundles.load("node_compat","erlang","stdlib","commonjs");
 var http = require('http');
 var global = {
                 __doc__: "Below you can find a list of pre-packaged bundles [Beam.js](http://beamjs.org) provides. Please note that you can combine them.\n\n" +
-                "Using bundles is quite trivial. You have two options:\n\n" +
-                "* Command line: use flag -bundles to enlist any number of bundles you wish to load:\n\n" +
-                "      ```./beamjs -bundles node_compat erlang```\n\n" +
-                "* Runtime: use <a href=\"/default/beamjs/bundles\">beamjs.bundles</a>:\n\n\n\n" +
-                "         beamjs.bundles.loaded(); // List of currently loaded bundles\n" +
-                "         beamjs.bundles.load('node_compat','erlang'[,...]); // Load bundles\n" +
-                "         beamjs.bundles.unload('node_compat'[,...]); // Unload bundles\n" +
-                "Once bundle is loaded using one of the above methods, its modules become available to a program. Happy hacking!",
+                beamjs.bundles.__doc__ +
+                "Once bundles are loaded using one of the above methods, their modules become available to a program. Happy hacking!",
                "default": { __doc__: "This bundle provides core Beam.js functionality and is always loaded", beamjs: beamjs, require: require, console: console },
                "node_compat": { __doc__: "Node.js compatibility layer", events: require('events'), sys: require('sys'), fs: require('fs'), util: require('util') },
                "erlang": { __doc__: "This bundle exposes core Erlang functionality", messaging: require('messaging'), dist: require('dist') },
