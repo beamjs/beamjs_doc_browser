@@ -11,8 +11,8 @@ var global = {
                 "      ```./beamjs -bundles node_compat erlang```\n\n" +
                 "* Runtime: use <a href=\"/default/beamjs/bundles\">beamjs.bundles</a>:\n\n\n\n" +
                 "         beamjs.bundles.loaded(); // List of currently loaded bundles\n" +
-                "         beamjs.bundles.load(bundle1[,bundle][,...]); // Load bundles\n" +
-                "         beamjs.bundles.unload(bundle1[,bundle][,...]); // Unload bundles\n" +
+                "         beamjs.bundles.load('node_compat','erlang'[,...]); // Load bundles\n" +
+                "         beamjs.bundles.unload('node_compat'[,...]); // Unload bundles\n" +
                 "Once bundle is loaded using one of the above methods, its modules become available to a program. Happy hacking!",
                "default": { __doc__: "This bundle provides core Beam.js functionality and is always loaded", beamjs: beamjs, require: require, console: console },
                "node_compat": { __doc__: "Node.js compatibility layer", events: require('events'), sys: require('sys'), fs: require('fs'), util: require('util') },
