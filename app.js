@@ -1,13 +1,13 @@
 var http = require('http');
-var global = { events: require('events'),
+var global = { beamjs: beamjs,
                require: require,
                console: console,
-               sys: require('sys'),
+               events: require('events'),
                messaging: require('messaging'),
                dist: require('dist'),
+               sys: require('sys'),
                fs: require('fs'),
-               os: require('os'),
-               '__bundles__': __bundles__
+               os: require('os')
              };
 
 require.paths.unshift(__dirname);
