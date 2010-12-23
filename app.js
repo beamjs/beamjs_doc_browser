@@ -23,6 +23,7 @@ var STATIC = {
 var handler = function(request, response) {	 
     if (request.path == "/favicon.ico") {
         response.writeHead(404,{});
+        response.end();
         return;
     }
 
