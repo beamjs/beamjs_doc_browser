@@ -75,6 +75,10 @@ var handler = function(request, response) {
         }
     }
 
+    if ((typeof current == 'function') && (current.prototype != undefined) && (current.prototype != {})) {
+	    templateData.topics['prototype'] = current.prototype;
+    }
+
     try {
         response.writeHead(200, {"Content-Type": "text/html"});
         response.end(Template(templateData));
