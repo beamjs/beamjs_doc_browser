@@ -59,7 +59,8 @@ var handler = function(request, response) {
     var templateData = {
         doc: "",
         key: key,
-        topics: current,
+        topics: {},
+        obj: current,
         path: path,
         version: global.sys.beamjs.version
     };
