@@ -1,17 +1,26 @@
-var http = require('http');
-var global = { beamjs: beamjs,
-               require: require,
-               console: console,
-               events: require('events'),
-               messaging: require('messaging'),
-               dist: require('dist'),
-               sys: require('sys'),
-               fs: require('fs'),
-               os: require('os')
-             };
-
+// 
 require.paths.unshift(__dirname);
 require('showdown');
+
+beamjs.bundles.load("node_compat","erlang","stdlib","commonjs");
+var http = require('http');
+var global = {
+                __doc__: "Below you can find a list of pre-packaged bundles [Beam.js](http://beamjs.org) provides. Please note that you can combine them.\n\n" +
+                "Using bundles is quite trivial. You have two options:\n\n" +
+                "* Command line: use flag -bundles to enlist any number of bundles you wish to load:\n\n" +
+                "      ```./beamjs -bundles node_compat erlang```\n\n" +
+                "* Runtime: use <a href=\"/default/beamjs/bundles\">beamjs.bundles</a>:\n\n\n\n" +
+                "         beamjs.bundles.loaded(); // List of currently loaded bundles\n" +
+                "         beamjs.bundles.load(bundle1[,bundle][,...]); // Load bundles\n" +
+                "         beamjs.bundles.unload(bundle1[,bundle][,...]); // Unload bundles\n" +
+                "Once bundle is loaded using one of the above methods, its modules become available to a program. Happy hacking!",
+               "default": { __doc__: "This bundle provides core Beam.js functionality and is always loaded", beamjs: beamjs, require: require, console: console },
+               "node_compat": { __doc__: "Node.js compatibility layer", events: require('events'), sys: require('sys'), fs: require('fs'), util: require('util') },
+               "erlang": { __doc__: "This bundle exposes core Erlang functionality", messaging: require('messaging'), dist: require('dist') },
+               "stdlib": { __doc__: "Standard Library", os: require('os') },
+               "commonjs": { __doc__: "CommonJS compatibility layer", test: require('test'), assert: require('assert') }
+             };
+
 
 var YAJET = require('yajet');
 
@@ -44,7 +53,7 @@ var handler = function(request, response) {
     while (tokens.length > 0) {
         lkey = tokens.shift();
         if (lkey == "") {
-            key += "(global)";
+            key += "Bundles";
         } else {
             key += "." + lkey;
         }
