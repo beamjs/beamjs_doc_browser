@@ -1,8 +1,8 @@
-// 
 require.paths.unshift(__dirname);
 require('showdown');
 
 beamjs.bundles.load("node_compat","erlang","stdlib","commonjs");
+
 var http = require('http');
 var global = {
                 __doc__: "Below you can find a list of pre-packaged bundles [Beam.js](http://beamjs.org) provides. Please note that you can combine them.\n\n" +
@@ -10,7 +10,7 @@ var global = {
                 "Once bundles are loaded using one of the above methods, their modules become available to a program. Happy hacking!",
                "default": { __doc__: "This bundle provides core Beam.js functionality and is always loaded", beamjs: beamjs, require: require, console: console },
                "node_compat": { __doc__: "Node.js compatibility layer", events: require('events'), sys: require('sys'), fs: require('fs'), util: require('util') },
-               "erlang": { __doc__: "This bundle exposes core Erlang functionality", messaging: require('messaging'), dist: require('dist') },
+               "erlang": { __doc__: "This bundle exposes core Erlang functionality", gen_event: require('gen_event'), messaging: require('messaging'), dist: require('dist') },
                "stdlib": { __doc__: "Standard Library", os: require('os') },
                "commonjs": { __doc__: "CommonJS compatibility layer", test: require('test'), assert: require('assert') }
              };
