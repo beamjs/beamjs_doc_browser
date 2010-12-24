@@ -249,7 +249,7 @@ _77=_79(_72(_77));
 _77=_6(_77);
 _77=_77.replace(/^\n+/g,"");
 _77=_77.replace(/\n+$/g,"");
-_77="<pre><code>"+_77+"\n</code></pre>";
+_77="<pre><code class='javascript'>"+_77+"\n</code></pre>";
 return _1c(_77)+_78;
 });
 _73=_73.replace(/~0/,"");

@@ -89,3 +89,26 @@ footer {
     font-size: x-small;
     color: gray;
 }
+
+
+/* Styles for hightlighter */
+.javascript .comment, .ruby .comment {
+    color : green;
+}
+
+.javascript .string, .ruby .string {
+    color : teal;
+}
+
+.javascript .keywords, .ruby .keywords {
+    color : navy;
+}
+
+.javascript .global {
+    color : blue;
+}
+
+.javascript .brackets, .ruby .brackets {
+    color : navy;
+}
+

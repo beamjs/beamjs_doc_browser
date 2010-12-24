@@ -20,7 +20,8 @@ var YAJET = require('yajet');
 
 var Template = function (v) { return v};
 var STATIC = {
-    '/css/fonts.css': undefined,
+    '/js/code_highlighter.js': undefined,
+    '/js/javascript.js': undefined,
     '/css/main.css': undefined
 };
 
