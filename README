@@ -1,5 +1,5 @@
 How to start:
 
     cd ../beamjs
-    ./beamjs -sname beam -bundles node_compat -pa ../beamjs_misultin/ebin -pa ../beamjs_misultin/deps/misultin/ebin/ -mod http beamjs_misultin -jseval "listenPort=8080" -load ../beamjs_doc_browser/app.js
+    ./beamjs -jspath ../beamjs_misultin/lib -bundles erlang node_compat stdlib commonjs -pa ../beamjs_misultin/ebin -pa ../beamjs_misultin/deps/misultin/ebin/  -jseval "listenPort=8080" -load ../beamjs_doc_browser/app.js
 
