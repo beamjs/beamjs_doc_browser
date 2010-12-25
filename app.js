@@ -24,7 +24,7 @@ var STATIC = {
 };
 
 handler = function(request, response) {
-	match([[{path: '/favicon.ico', '_': match._}, match._], function() {
+	match([[{path: '/favicon.ico', _: match._}, match._], function() {
 		response.writeHead(404,{});
 		response.end();
 		return;
