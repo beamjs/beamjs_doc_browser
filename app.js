@@ -7,9 +7,9 @@ var global = {
 	beamjs.bundles.__doc__ +
 	"Once bundles are loaded using one of the above methods, their modules become available to a program. Happy hacking!",
 	"default": { __doc__: "This bundle provides core Beam.js functionality and is always loaded", beamjs: beamjs, require: require, console: console, match: match },
-	"node_compat": { __doc__: "Node.js compatibility layer", events: require('events'), sys: require('sys'), fs: require('fs'), util: require('util') },
+	"node_compat": { __doc__: "Node.js compatibility layer", events: require('events'), sys: require('sys'), fs: require('fs'), dns: require('dns'), util: require('util'), os: require('os') },
 	"erlang": { __doc__: "This bundle exposes core Erlang functionality", gen_event: require('gen_event'), messaging: require('messaging'), dist: require('dist') },
-	"stdlib": { __doc__: "Standard Library", os: require('os') },
+	"stdlib": { __doc__: "Standard Library", os: require( { module: 'beamjs_mod_os' }), dns: require({module: 'beamjs_mod_dns'}) },
 	"commonjs": { __doc__: "CommonJS compatibility layer", test: require('test'), assert: require('assert') }
 };
 
