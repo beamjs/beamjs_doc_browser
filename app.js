@@ -20,6 +20,7 @@ var Template = function (v) { return v};
 var STATIC = {
 	'/js/code_highlighter.js': undefined,
 	'/js/javascript.js': undefined,
+	'/js/breadcrumbs.js': undefined,
 	'/css/main.css': undefined
 };
 

@@ -12,15 +12,16 @@
         <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen">
 	<script type="text/javascript" src="/js/code_highlighter.js"></script>
 	<script type="text/javascript" src="/js/javascript.js"></script>
+	<script type="text/javascript" src="/js/breadcrumbs.js"></script>
     </head>
-    <body>
+    <body onload="Breadcrumbs('breadcrumbs');">
         <header>
             <h1><a href="/">Beam.js</a></h1>
         </header>
         <div class="content-wrapper">
             <section class="content">
 
-                <h2><em>${ this.obj, typeOf }</em> ${ this.key }</h2>
+                <h2><em>${ this.obj, typeOf }</em> <span id="breadcrumbs">${ this.key }</span></h2>
 
                 ${ this.doc, showdown }
 
@@ -41,6 +42,5 @@
                 </footer>
             </section>
         </div>
-
     </body>
 </html>
