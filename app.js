@@ -1,7 +1,7 @@
 require.paths.unshift(__dirname);
 require('showdown');
 
-var http = require('http');
+var http = require('node_compat/http');
 var global = {
 	__doc__: "Below you can find a list of pre-packaged bundles [Beam.js](http://beamjs.org) provides. Please note that you can combine them.\n\n" +
 	beamjs.bundles.__doc__ +
