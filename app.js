@@ -9,7 +9,7 @@ var global = {
 	"default": { __doc__: "This bundle provides core Beam.js functionality and is always loaded", beamjs: beamjs, require: require, console: console, match: match },
 	"node_compat": { __doc__: "Node.js compatibility layer", events: require('events'), sys: require('sys'), fs: require('fs'), dns: require('dns'), util: require('util'), os: require('os') },
 	"erlang": { __doc__: "This bundle exposes core Erlang functionality", gen_event: require('gen_event'), messaging: require('messaging'), dist: require('dist') },
-	"stdlib": { __doc__: "Standard Library", os: require('os'), dns: require('dns') },
+	"stdlib": { __doc__: "Standard Library", osys: require('osys'), dns: require('dns') },
 	"commonjs": { __doc__: "CommonJS compatibility layer", test: require('test'), assert: require('assert') }
 };
 
